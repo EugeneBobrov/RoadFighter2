@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/res/merged/debug/drawable-hdpi/opponent.png",
+        "source": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/drawable-hdpi/opponent.png"
+    },
+    {
+        "merged": "/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/res/merged/debug/drawable-hdpi/obstacle.png",
+        "source": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/drawable-hdpi/obstacle.png"
+    },
+    {
+        "merged": "/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png",
+        "source": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/res/merged/debug/drawable-hdpi/track.png",
+        "source": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/drawable-hdpi/track.png"
+    },
+    {
+        "merged": "/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/res/merged/debug/drawable-hdpi/car.png",
+        "source": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/drawable-hdpi/car.png"
+    }
+]

@@ -1,0 +1,7 @@
+#Sat Nov 05 18:00:31 MSK 2016
+base.0=/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_77babcdedfd03e50bbde0a5250d60a2346cb33af
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_013a4e2e7ee88dc4a4f96bbb823725788f1037af/classes.dex
+base.1=/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_013a4e2e7ee88dc4a4f96bbb823725788f1037af
+file.0=/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_77babcdedfd03e50bbde0a5250d60a2346cb33af/classes.dex
