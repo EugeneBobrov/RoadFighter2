@@ -1,8 +1,11 @@
 package uma.roadfighter.view;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.opengl.GLSurfaceView;
 import android.view.MotionEvent;
+
+import uma.roadfighter.R;
 
 public class RoadFighterGLView extends GLSurfaceView {
 	RoadFighterGLRenderer renderer;

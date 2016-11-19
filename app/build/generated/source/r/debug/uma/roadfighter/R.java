@@ -13,16 +13,26 @@ public final class R {
     public static final class drawable {
         public static final int car=0x7f020000;
         public static final int ic_launcher=0x7f020001;
-        public static final int obstacle=0x7f020002;
-        public static final int opponent=0x7f020003;
-        public static final int track=0x7f020004;
+        public static final int longtrack=0x7f020002;
+        public static final int longtrack2=0x7f020003;
+        public static final int longtrack2_backup=0x7f020004;
+        public static final int obstacle=0x7f020005;
+        public static final int opponent=0x7f020006;
+        public static final int opponent_on_bike=0x7f020007;
+        public static final int track=0x7f020008;
     }
     public static final class layout {
         public static final int main=0x7f030000;
     }
+    public static final class raw {
+        public static final int overdue=0x7f040000;
+        public static final int rfmusic=0x7f040001;
+        public static final int rfmusic2=0x7f040002;
+        public static final int rfmusic3=0x7f040003;
+    }
     public static final class string {
-        public static final int app_name=0x7f050000;
-        public static final int hello=0x7f050001;
+        public static final int app_name=0x7f060000;
+        public static final int hello=0x7f060001;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 
@@ -33,9 +43,9 @@ public final class R {
             backward-compatibility can go here.
         
          */
-        public static final int AppBaseTheme=0x7f040000;
+        public static final int AppBaseTheme=0x7f050000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f040001;
+        public static final int AppTheme=0x7f050001;
     }
 }

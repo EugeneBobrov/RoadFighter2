@@ -75,7 +75,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 		totalTime = 0;
 		
 		// Circuit(0)
-		RoadFighter.PObj = RoadFighter.user_trackI; RoadFighter.PTex = R.drawable.track; RoadFighter.PW = 100; RoadFighter.PH = 400; RoadFighter.PX = 0; RoadFighter.PY = 0;
+		RoadFighter.PObj = RoadFighter.user_trackI; RoadFighter.PTex = R.drawable.longtrack2; RoadFighter.PW = 100; RoadFighter.PH = 400*8; RoadFighter.PX = 0; RoadFighter.PY = 0;
 		RoadFighter.run_ADD_OBJECT();
 		RoadFighter.PTrack = RoadFighter.user_trackI; RoadFighter.PF = 3; RoadFighter.PBL = 25; RoadFighter.PBR = 75; RoadFighter.PFL = 380;
 		RoadFighter.run_ADD_TRACK();
@@ -100,9 +100,11 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 		}
 		
 		// Opponents
-		nOpponents = 3;
-		RoadFighter.PTex = R.drawable.opponent; RoadFighter.PW = 15; RoadFighter.PH = 15;
+		nOpponents = 4;
+		RoadFighter.PTex = R.drawable.opponent_on_bike; RoadFighter.PW = 15; RoadFighter.PH = 15;
+		RoadFighter.OppId = 2;
 		for( int i = 2 + nObstacles; i < 2 + nObstacles + nOpponents; i++ ) {
+			//RoadFighter.PTex = R.drawable.opponent;
 			RoadFighter.PObj = i;
 			RoadFighter.PX = RoadFighter.bleftI.apply(RoadFighter.user_trackI) + RoadFighter.PW/2 + generator.nextInt( RoadFighter.brightI.apply(RoadFighter.user_trackI) - RoadFighter.bleftI.apply(RoadFighter.user_trackI) - RoadFighter.PW );
 			RoadFighter.PY = RoadFighter.PH/2 + generator.nextInt( RoadFighter.flineI.apply(RoadFighter.user_trackI) - RoadFighter.PH );
@@ -111,6 +113,7 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 			RoadFighter.run_ADD_CAR();
 			RoadFighter.PA = carHigh;
 			RoadFighter.run_SET_ACC();
+			RoadFighter.OppId = 4;
 		}
 		
 		// Time
@@ -131,8 +134,11 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 				 1.0f,  1.0f, 0.0f,
 				 1.0f, -1.0f, 0.0f
 		};
+
+		int MyConst = 14;
+
 		// Buffer with space
-		ByteBuffer vb = ByteBuffer.allocateDirect( vertex.length * 4 ); // Space
+		ByteBuffer vb = ByteBuffer.allocateDirect( vertex.length * MyConst ); // Space
 		vb.order( ByteOrder.nativeOrder() );	// Hardware order
 		vertexBuffer = vb.asFloatBuffer();  	// Memory to VertexBuffer (in float)
 		vertexBuffer.put( vertex );				// Put vertex info
@@ -148,19 +154,19 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 				1.0f, 1.0f
 		};
 		// Buffer with space
-		ByteBuffer tb = ByteBuffer.allocateDirect( texCoord.length * 4 ); // Space
+		ByteBuffer tb = ByteBuffer.allocateDirect( texCoord.length * MyConst ); // Space
 		tb.order( ByteOrder.nativeOrder() );	// Hardware order
 		texCoordBuffer = tb.asFloatBuffer();  	// Memory to VertexBuffer (in float)
 		texCoordBuffer.put( texCoord );			// Put vertex info
 		texCoordBuffer.position( 0 );
 		
 		// Textures
-		texID = new int[4];
-		gl.glGenTextures( 4, texID, 0 );
+		texID = new int[MyConst];
+		gl.glGenTextures( MyConst, texID, 0 );
 		
 		// Track texture
 		gl.glBindTexture( GL10.GL_TEXTURE_2D, texID[0] );
-		InputStream is = context.getResources().openRawResource( +R.drawable.track );
+		InputStream is = context.getResources().openRawResource( +R.drawable.longtrack2 ); //track
 		Bitmap bitmap = BitmapFactory.decodeStream(is);
 		gl.glTexParameterf( GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MAG_FILTER, GL10.GL_LINEAR );
 		gl.glTexParameterf( GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_LINEAR );
@@ -193,6 +199,18 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 		gl.glTexParameterf( GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_LINEAR );
 		GLUtils.texImage2D( GL10.GL_TEXTURE_2D, 0, bitmap, 0 );
 		bitmap.recycle();
+
+		// Bike-Opponent-car texture
+		gl.glBindTexture( GL10.GL_TEXTURE_2D, texID[4] );
+		is = context.getResources().openRawResource( +R.drawable.opponent_on_bike );
+		bitmap = BitmapFactory.decodeStream(is);
+		gl.glTexParameterf( GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MAG_FILTER, GL10.GL_LINEAR );
+		gl.glTexParameterf( GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_LINEAR );
+		GLUtils.texImage2D( GL10.GL_TEXTURE_2D, 0, bitmap, 0 );
+		bitmap.recycle();
+
+
+
 	}
 	
 	public void onDrawFrame( GL10 gl ) {
@@ -360,7 +378,9 @@ public class RoadFighterGLRenderer implements GLSurfaceView.Renderer {
 				gl.glPushMatrix();
 				gl.glTranslatef( NormalizeCoordinate( RoadFighter.posXI.apply(i) ), NormalizeCoordinate(  RoadFighter.posYI.apply(i) ), 0.0f );
 				gl.glScalef( (float)RoadFighter.widthI.apply(i)/(float)RoadFighter.widthI.apply(RoadFighter.user_trackI), (float)RoadFighter.heightI.apply(i)/(float)RoadFighter.widthI.apply(RoadFighter.user_trackI), 1.0f );
-				gl.glBindTexture(GL10.GL_TEXTURE_2D, texID[2] );
+
+				gl.glBindTexture(GL10.GL_TEXTURE_2D, texID[ i % 2 == 0 ? 4 : 2 ] );   // texID binding here
+
 				gl.glEnable(GL10.GL_BLEND );
 				gl.glBlendFunc( GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA );
 				gl.glDrawArrays( GL10.GL_TRIANGLES, 0, 6 );

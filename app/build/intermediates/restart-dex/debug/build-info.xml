@@ -1,37 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86_64,x86"
-    api-level="23"
-    density="hdpi"
-    format="8"
-    plugin-version="2.2.2"
-    timestamp="63159305134812"
-    token="-8614224405568545057"
-    verifier="FULL_BUILD_REQUESTED" >
+    abi="armeabi-v7a,armeabi"
+    api-level="21"
+    density="xhdpi"
+    format="7"
+    timestamp="4193375105136"
+    token="2588977163184753364"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="2906" />
+        duration="1203" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="1330" />
     <task
         name="instant-run-transform"
-        duration="1574" />
+        duration="17" />
     <task
         name="verifier"
-        duration="90" />
+        duration="4" />
 
     <artifact
-        location="/Users/Eugene/Documents/RoadFighter2/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/root/AndroidStudioProjects/rf2/RoadFighter2/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
 
-    <build
-        timestamp="63159305134812"
-        verifier="FULL_BUILD_REQUESTED" >
+    <build timestamp="3402572084562" >
         <artifact
-            location="/Users/Eugene/Documents/RoadFighter2/app/build/outputs/apk/app-debug.apk"
+            location="/root/AndroidStudioProjects/rf2/RoadFighter2/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="4132511396980"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="/root/AndroidStudioProjects/rf2/RoadFighter2/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/root/AndroidStudioProjects/rf2/RoadFighter2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/root/AndroidStudioProjects/rf2/RoadFighter2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="4193375105136"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/root/AndroidStudioProjects/rf2/RoadFighter2/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

@@ -1,5 +1,7 @@
 package uma.roadfighter.model;
 
+import android.util.Log;
+
 import eventb2jml_plugin.models.JML.BRelation;
 import eventb2jml_plugin.models.JML.BSet;
 
@@ -54,6 +56,8 @@ public class RoadFighter_Implementation extends RoadFighter_Machine {
 	public Integer PS;       //@ represents PS = S;
 	public Integer PObj1;    //@ represents PObj1 = Obj1;
 	public Integer PObj2;    //@ represents PObj1 = Obj2;
+
+	public Integer OppId;
 
 
 	public RoadFighter_Implementation() {
@@ -366,7 +370,11 @@ public class RoadFighter_Implementation extends RoadFighter_Machine {
 	 ensures (\exists Integer Obj; (\exists Integer Track; \old((cars.has(Obj) && tracks.has(Track))) &&  finish.equals(\old(finish.override((new BRelation<Integer,Boolean>().singleton(Obj,fline.apply(PTrack) < posY.apply(PObj)))))))); @*/
 	public void run_FINISH_TRACK() {
 		if( guard_FINISH_TRACK() ) {
-			Boolean res = flineI.apply(PTrack) < posYI.apply(PObj);
+			Boolean res = flineI.apply(PTrack) * 9 < posYI.apply(PObj);
+
+			Log.v("A", flineI.apply(PTrack).toString());
+			Log.v("B", "blah blah");
+			Log.v("C", posYI.apply(PObj).toString());
 			finishI = finishI.override(new BRelation<Integer,Boolean>().singleton(PObj, res));
 		}
 	}

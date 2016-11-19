@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/Eugene/Documents/RoadFighter2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "/root/AndroidStudioProjects/rf2/RoadFighter2/app/build/intermediates/res/merged/debug/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 100
                 },
                 "from": {
-                    "file": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/values/strings.xml",
+                    "file": "/root/AndroidStudioProjects/rf2/RoadFighter2/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 168
                 },
                 "from": {
-                    "file": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/values/strings.xml",
+                    "file": "/root/AndroidStudioProjects/rf2/RoadFighter2/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -50,7 +50,7 @@
                     "endOffset": 459
                 },
                 "from": {
-                    "file": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/values/styles.xml",
+                    "file": "/root/AndroidStudioProjects/rf2/RoadFighter2/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -71,7 +71,7 @@
                     "endOffset": 619
                 },
                 "from": {
-                    "file": "/Users/Eugene/Documents/RoadFighter2/app/src/main/res/values/styles.xml",
+                    "file": "/root/AndroidStudioProjects/rf2/RoadFighter2/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
